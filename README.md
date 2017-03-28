@@ -34,7 +34,7 @@ However, we need to be realistic. The two genes are unlikely to have the same va
 
 The ratio of gene correlation coefficients is not trivial to compute and depends on the detailed distribution of values in gene expression profiles.
 
-The enrichment score of a large set of genes is again easy to compute. In this case we can visualize the running sum as the difference between a random walk (_p_-hit in the paper) characterized by the square root and a linear function (_p_-loss in the paper):
+The enrichment score of a large set of uncorrelated genes is again easy to compute. In this case we can visualize the running sum as the difference between a random walk (_p_-hit in the paper) characterized by the square root and a linear function (_p_-loss in the paper):
 
 ![random_walk](random_walk.gif)
 
