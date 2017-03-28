@@ -26,7 +26,7 @@ Running the functions on the example dataset produces the following __output__:
 * `my_gsea.out` is the output of `my_gsea('my_genes.txt', 'pathways.txt')`.
 
 ## Analytical approach to computation of enrichment score
-Let's compute the enrichment score of a gene set containing a __single gene__. If this gene is important, i.e. located at the top or at the bottom of the ranked gene list, the corresponding enrichment score ±1. If, on the other hand, this gene is not important and appears in the middle of the list, the corresponding enrichment score is going to be near ±1/2. After permuting gene expression profile classes, this single-gene set can appear anywhere in the ranked list, yielding an average enrichment score of ±3/4:
+Let's compute the enrichment score of a gene set containing a __single gene__. If this gene is important, i.e. located at the top or at the bottom of the ranked gene list, the corresponding enrichment score equals ±1. If, on the other hand, this gene is not important and appears in the middle of the list, the corresponding enrichment score is going to be near ±1/2. After permuting gene expression profile classes, this single-gene set can appear anywhere in the ranked list, yielding an average enrichment score of ±3/4:
 
 ![integral1](int1.gif)
 
