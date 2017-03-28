@@ -46,7 +46,7 @@ def get_gene_expressions(filename, delimiter='\t'):
 		list: Gene expression profiles with the following structure:
 			gene_expressions[gene_index][profile_index].
 		list: Class labels associated with the profiles.
-		list: Gene labels associated with the profiles
+		list: Gene labels associated with the profiles.
 	"""
 	with open(filename) as f:
 		reader = csv.reader(f, delimiter=delimiter)
