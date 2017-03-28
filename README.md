@@ -20,15 +20,19 @@ Besides the source code three example __input files__ are provided:
 `figure_1.pdf` shows an __example of output__ of the `plot` function for MAP00480_Glutathione_metabolism, one of the high scoring gene sets.
 
 ## Analytical approach to computation of enrichment score
-Let's compute the enrichment score of a gene set containing a single gene. If this gene is important, i.e. at the top or at the bottom of the ranked gene list, the corresponding enrichment score ±1. If, on the other hand, this gene is not important and appears in the middle of the list, the corresponding enrichment score is going to be near ±1/2. After permuting gene expression profile classes, this single-gene set can appear anywhere in the ranked list, yielding an average enrichment score of ±3/4:
+Let's compute the enrichment score of a gene set containing a __single gene__. If this gene is important, i.e. at the top or at the bottom of the ranked gene list, the corresponding enrichment score ±1. If, on the other hand, this gene is not important and appears in the middle of the list, the corresponding enrichment score is going to be near ±1/2. After permuting gene expression profile classes, this single-gene set can appear anywhere in the ranked list, yielding an average enrichment score of ±3/4:
 
 ![integral1](int1.gif)
 
-Therefore, the normalized enrichment score of the high scoring single-gene set is ±4/3. Complexity grows quickly with the number of genes in the gene set. For two genes in the gene set with the same correlation coefficient we obtain the enrichment score by numeric integration:
+Therefore, the normalized enrichment score of the high scoring single-gene set is ±4/3. Complexity grows quickly with the number of genes in the gene set. For __two genes__ in the gene set with the same correlation coefficient we obtain the enrichment score by numeric integration:
 
 ![integral2](int2.gif)
 
 However, we need to be realistic. The two genes are unlikely to have the same value of correlation coefficient. The more different the correlation coefficients are, the closer the value of the second integral to the value of the first integral. In other words, if the two genes appear far apart in the ranked gene list, the smaller correlation can be neglected and the second integral approaches to the value for the one-gene set (the first integral).
+
+The ratio of gene correlation coefficients is not trivial and depends on the detailed distribution of values in gene expression profiles.
+
+The enrichment score of a large set of genes is again easy to compute. In this case we can visualize the running sum as the difference between a random walk (_p_-hit in the paper) characterized by the square root and a linear function (_p_-loss in the paper).
 
 ## Computation of enrichment score from gene expression profiles
 After computing Pearson correlation coefficients from gene expression profiles and the corresponding classes, the running sum (see the original paper) is calculated, from which the enrichment score is obtained. This implementation scales linearly with the number of genes _N_ in gene expression profiles. It turns out that this approach provides the most efficient solution for small datasets, like the ones given in the example input files.
