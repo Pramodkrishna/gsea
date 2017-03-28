@@ -19,7 +19,7 @@ Besides the source code three example __input files__ are provided:
 
 Running the functions on the example dataset produces the following __output__:
 * from `gsea('leukemia.txt', 'pathways.txt')` we obtain `gsea.out`,
-* `figure_1.png` shows an example of output of the `plot` function for MAP00480_Glutathione_metabolism, one of the high scoring gene sets.
+* `figure_1.png` shows an example of output of the `plot` function for MAP00480_Glutathione_metabolism, one of the high scoring gene sets,
 
 ![plot](figure_1.png)
 
