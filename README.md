@@ -36,7 +36,7 @@ The enrichment score of a large set of genes is again easy to compute. In this c
 
 ![random_walk](random_walk.gif)
 
-Knowing that the smallest enrichment score is 1/4 and the largest enrichment score is 1, the largest normalized enrichment score is 4. Large normalized enrichment scores occur in gene sets which contain both the important genes as determined by the ranked gene list and many non-important genes. In this case, the non-normalized enrichment score is determined by important genes and is close to 1 in value. In permuted scores non-important genes play a crucial role in keeping the enrichment score low.
+Knowing that the smallest enrichment score is 1/4 and the largest enrichment score is 1, the largest normalized enrichment score is 4. Large normalized enrichment scores occur in gene sets which contain both the important genes as determined by the ranked gene list and many non-important genes. In this case, the non-normalized enrichment score is determined by important genes and is close to 1 in value. In permuted scores non-important genes play the vital role in keeping the enrichment score low.
 
 ## Computation of enrichment score from gene expression profiles
 After computing Pearson correlation coefficients from gene expression profiles and the corresponding classes, the running sum (see the original paper) is calculated, from which the enrichment score is obtained. This implementation scales linearly with the number of genes _N_ in gene expression profiles. It turns out that this approach provides the most efficient solution for small datasets, like the ones given in the example input files.
