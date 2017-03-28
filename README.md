@@ -32,7 +32,7 @@ Therefore, the normalized enrichment score of the high scoring single-gene set i
 
 However, we need to be realistic. The two genes are unlikely to have the same value of correlation coefficient. The more different the correlation coefficients are, the closer the value of the second integral to the value of the first integral. In other words, if the two genes appear far apart in the ranked gene list, the smaller correlation can be neglected and the second integral approaches to the value for the one-gene set (the first integral).
 
-The ratio of gene correlation coefficients is not trivial and depends on the detailed distribution of values in gene expression profiles.
+The ratio of gene correlation coefficients is not trivial to compute and depends on the detailed distribution of values in gene expression profiles.
 
 The enrichment score of a large set of genes is again easy to compute. In this case we can visualize the running sum as the difference between a random walk (_p_-hit in the paper) characterized by the square root and a linear function (_p_-loss in the paper):
 
