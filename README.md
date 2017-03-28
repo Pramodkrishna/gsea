@@ -41,8 +41,10 @@ Knowing that the smallest enrichment score is 1/4 and the largest enrichment sco
 ## Computation of enrichment score from gene expression profiles
 After computing Pearson correlation coefficients from gene expression profiles and the corresponding classes, the running sum (see the original paper) is calculated, from which the enrichment score is obtained. This implementation scales linearly with the number of genes _N_ in gene expression profiles. It turns out that this approach provides the most efficient solution for small datasets, like the ones given in the example input files.
 
-![plot](figure_1.png)
-
 For large datasets, another approach is more efficient. The explicit computation of the running sum can be avoided by realizing that the extreme value of the running sum along the genes in gene expression profiles can occur only at positions of genes in the gene set for which the enrichment score is being calculated. Therefore, the running sum needs to be computed only at those positions, thereby reducing the overall computational effort. In this case gene expression profiles need to be structured as dicts instead of lists, resulting in computational efficiency of O(1) instead of O(_N_) in terms of the number of genes in gene expression profiles.
+
+The `plot` function provides a visualization of computation of enrichment score.
+
+![plot](figure_1.png)
 
 ## Computation of enrichment score without gene expression profiles
