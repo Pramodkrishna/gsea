@@ -17,7 +17,7 @@ Besides the source code three example __input files__ are provided:
 * `pathways.txt` lists _a priori_ defined sets of genes enoding products in metabolic pathways,
 * `my_genes.txt` contains a set of interesting genes from the literature.
 
-`figure_1.png` shows an __example of output__ of the `plot` function for MAP00480_Glutathione_metabolism, one of the high scoring gene sets. The figure was obtained by running the `plot` function.
+`figure_1.png` shows an __example of output__ of the `plot` function for MAP00480_Glutathione_metabolism, one of the high scoring gene sets.
 
 ![plot](figure_1.png)
 
