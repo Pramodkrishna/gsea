@@ -14,7 +14,7 @@ The source code is written in Python and resides in `gsea.py`. The three most im
 
 Besides the source code three example __input files__ are provided:
 * `leukemia.txt` contains gene expression profiles for two types of leukemia: acute lymphocytic leukemia (ALL) and acute myelogenous leukemia (AML),
-* `pythways.txt` lists _a priori_ defined sets of genes enoding products in metabolic pathways,
+* `pathways.txt` lists _a priori_ defined sets of genes enoding products in metabolic pathways,
 * `my_genes.txt` contains a set of interesting genes from the literature.
 
 `figure_1.pdf` shows an __example of output__ of the `plot` function for MAP00480_Glutathione_metabolism, one of the high scoring gene sets.
