@@ -7,10 +7,12 @@ The source code is written in Python and resides in `gsea.py`. The three most im
   * a heat map of gene expression profiles grouped by class,
   * gene expression correlation profile,
   * gene set member position in the profiles, 
-  * the running sum (see the original paper),
+  * the running sum (see the original paper).
 * `my_gsea` which computes estimates of normalized enrichment scores and the corresponding _p_-values without gene expression profiles. A user-provided set of interesting genes is used instead.
 
 Besides the source code three example input files are provided:
 * `leukemia.txt` contains gene expression profiles for two types of leukemia: acute lymphocytic leukemia (ALL) and acute myelogenous leukemia (AML),
 * `pythways.txt` lists _a priori_ defined sets of genes enoding products in metabolic pathways,
 * `my_genes.txt` contains a set of interesting genes from the literature.
+
+`figure_1.pdf` shows an example of output of the `plot` function for MAP00480_Glutathione_metabolism, one of the high scoring gene sets.
