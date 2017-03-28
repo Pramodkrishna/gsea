@@ -24,7 +24,7 @@ Let's compute the enrichment score of a gene set containing a __single gene__. I
 
 ![integral1](int1.gif)
 
-Therefore, the normalized enrichment score of the high scoring single-gene set is ±4/3. Complexity grows quickly with the number of genes in the gene set. For __two genes__ in the gene set with the same correlation coefficient we obtain the enrichment score by numeric integration:
+Therefore, the normalized enrichment score of the high scoring single-gene set is 4/3. Complexity grows quickly with the number of genes in the gene set. For __two genes__ in the gene set with the same correlation coefficient we obtain the enrichment score by numeric integration:
 
 ![integral2](int2.gif)
 
