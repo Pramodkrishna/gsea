@@ -46,3 +46,16 @@ After computing Pearson correlation coefficients from gene expression profiles a
 For large datasets, another approach is more efficient. The explicit computation of the running sum can be avoided by realizing that the extreme value of the running sum along the genes in gene expression profiles can occur only at positions of genes in the gene set for which the enrichment score is being calculated. Therefore, the running sum needs to be computed only at those positions, thereby reducing the overall computational effort. In this case gene expression profiles need to be structured as dicts instead of lists, resulting in computational efficiency of O(1) instead of O(_N_) in terms of the number of genes in gene expression profiles.
 
 ## Computation of enrichment score without gene expression profiles
+Instead of gene expression profiles we are provided with a set of interesting genes from the literature. In this case our input data do not contain any numerical values. Interesting genes from the literature are expected to appear near the top or the bottom of the ranked gene list. Any gene that appears in the pathway but not in the set of interesting genes is likely to have a low correlation and is likely to appear in the middle of the ranked gene list. The estimate of enrichment score therefore depends on two numbers:
+* the size of the intersection between interesting genes and pathway gene set,
+* the size of the pathway gene set.
+
+If the pathway set contains __only interesting genes__, the estimated enrichment score is 1 and the estimated normalized enrichment score is 4/3. Correlations of interesting genes are likely to be similar in value, including after permutation. Therefore, those genes behave as one gene, for which we already calculated the enrichment score:
+
+![integral1](int1.gif)
+
+Dividing non-permuted enrichment score 1 by the average permuted enrichment score 3/4 yields 4/3 for the normalized enrichment score. Most of the permuted enrichment scores are likely to be smaller than the original enrichment score. Therefore, the gene set is statistically significant (p ≈ 0).
+
+If the pathway set contains __no interesting genes__, the estimated non-normalized enrichment score is between 3/4 for a one-gene set and 1/4 for a large gene set, as calculated earlier. In all cases the expected permuted enrichment score is similar to the original enrichment score. Therefore, the normalized enrichment score is 1 and the gene set is not statistically significant.
+
+If the pathway set contains __both interesting and non-interesting genes__, the estimated non-normalized enrichment score is determined mostly by the interesting gene correlations and is near 1 in value. Permuted enrichment scores decrease with the number of non-interesting genes in the set. Such mixed set yields the highest normalized enrichment score, which was set to 2 in `gsea.py` but is not limited to this value. Most of permuted enrichment scores are lower than the original enrichment score. Therefore, the gene set is statistically significant.
